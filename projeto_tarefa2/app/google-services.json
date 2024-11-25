@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "857804315274",
+    "project_id": "projetofirebase-cc4db",
+    "storage_bucket": "projetofirebase-cc4db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857804315274:android:d50e338cfd671a12d32b73",
+        "android_client_info": {
+          "package_name": "com.examole.aplicacaoatividade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1o673xKdN3IKOuCZnpGTJAo6gA98ejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857804315274:android:6592ba970a2eb391d32b73",
+        "android_client_info": {
+          "package_name": "com.example.Projeto_tap_App"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1o673xKdN3IKOuCZnpGTJAo6gA98ejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857804315274:android:87697908748c6b33d32b73",
+        "android_client_info": {
+          "package_name": "com.example.Projeto_tap_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1o673xKdN3IKOuCZnpGTJAo6gA98ejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857804315274:android:0543b4fe812681e8d32b73",
+        "android_client_info": {
+          "package_name": "com.example.projeto_tap_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1o673xKdN3IKOuCZnpGTJAo6gA98ejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857804315274:android:c8f62d3a975c6742d32b73",
+        "android_client_info": {
+          "package_name": "com.example.projeto_tarefa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1o673xKdN3IKOuCZnpGTJAo6gA98ejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
