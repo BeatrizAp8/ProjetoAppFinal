@@ -26,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 
 @Composable
-fun ListarLembrete(db:FirebaseFirestore, lembretes: List<DocumentSnapshot>, navController: NavHostController, innerPadding: PaddingValues){
+fun Listarpet(db:FirebaseFirestore, lembretes: List<DocumentSnapshot>, navController: NavHostController, innerPadding: PaddingValues){
 
     Column(
         modifier = Modifier.padding(innerPadding)
@@ -35,25 +35,25 @@ fun ListarLembrete(db:FirebaseFirestore, lembretes: List<DocumentSnapshot>, navC
             modifier = Modifier.fillMaxWidth().padding(20.dp),
             horizontalArrangement = Arrangement.Center
         ) {
-            Text("Listar Tarefas", fontSize = 25.sp)
+            Text("Listar Pets", fontSize = 25.sp)
         }
 
         LazyColumn {
-            items(lembretes){
+            items(pets){
                 Row (
                     modifier = Modifier.fillMaxWidth()
                         .padding(10.dp)
                         .border(BorderStroke(2.dp, Color.Black ), shape = RoundedCornerShape(30))
                         .padding(10.dp)
                         .clickable {
-                            navController.navigate("/AtualizarLembrete/${it.id}")
+                            navController.navigate("/Atualizarcadastro/${it.id}")
                         }
                     ,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Column {
-                        Text(it.get("titulo").toString(), fontWeight = FontWeight.Bold)
-                        Text(it.get("descricao").toString())
+                        Text(it.get("nomedopet").toString(), fontWeight = FontWeight.Bold)
+                        Text(it.get("servico").toString())
                     }
                     Column {
                         Text(it.get("data").toString())
@@ -67,9 +67,9 @@ fun ListarLembrete(db:FirebaseFirestore, lembretes: List<DocumentSnapshot>, navC
             horizontalArrangement = Arrangement.End
         ) {
             Button(onClick = {
-                navController.navigate("/CadastrarLembrete")
+                navController.navigate("/Cadastrarpet")
             }) {
-                Text("Cadastrar Lembrete")
+                Text("Cadastrar pet")
             }
         }
     }
