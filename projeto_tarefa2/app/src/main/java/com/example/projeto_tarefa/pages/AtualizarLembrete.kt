@@ -62,7 +62,7 @@ fun Atualizarcadastro(db: FirebaseFirestore, id: String, navController: NavHostC
                         "data" to valores.data.value,
                     )
 
-                    db.collection("cadastro").document(id).update(data as Map<String, Any>)
+                    db.collection("cadastropet").document(id).update(data as Map<String, Any>)
                         .addOnSuccessListener {
                             navController.navigate("/Listarpet")
                         }
