@@ -23,17 +23,17 @@ import com.example.projeto_tarefa.components.Field
 import com.google.firebase.firestore.FirebaseFirestore
 
 @Composable
-fun AtualizarLembrete(db: FirebaseFirestore, id: String, navController: NavHostController, innerPadding: PaddingValues, valores:Valores){
+fun Atualizarcadastro(db: FirebaseFirestore, id: String, navController: NavHostController, innerPadding: PaddingValues, valores:Valores){
     var mensagem = remember { mutableStateOf("") }
     Column(
         modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(innerPadding),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Atualizar tarefa", fontSize = 25.sp)
+        Text("Atualizar cadastro", fontSize = 25.sp)
         Column {
-            Field("Titulo: ", valores.titulo)
-            Field("Descricao: ", valores.descricao)
+            Field("Nome do pet: ", valores.nomedopet)
+            Field("Serviço: ", valores.servico)
             Field("Data: ", valores.data)
         }
 
@@ -46,7 +46,7 @@ fun AtualizarLembrete(db: FirebaseFirestore, id: String, navController: NavHostC
             Column {
                 Button(onClick = {
                     db.collection("lembrete").document(id).delete().addOnSuccessListener {
-                        navController.navigate("/ListarLembrete")
+                        navController.navigate("/Listarpet")
                     }.addOnFailureListener {
                         mensagem.value = it.message.toString()
                     }
@@ -57,14 +57,14 @@ fun AtualizarLembrete(db: FirebaseFirestore, id: String, navController: NavHostC
             Column {
                 Button(onClick = {
                     var data = hashMapOf(
-                        "titulo" to valores.titulo.value,
-                        "descricao" to valores.descricao.value,
+                        "Nome do pet" to valores.nomedopet.value,
+                        "Serviço" to valores.servico.value,
                         "data" to valores.data.value,
                     )
 
-                    db.collection("lembrete").document(id).update(data as Map<String, Any>)
+                    db.collection("cadastro").document(id).update(data as Map<String, Any>)
                         .addOnSuccessListener {
-                            navController.navigate("/ListarLembrete")
+                            navController.navigate("/Listarpet")
                         }
                         .addOnFailureListener {
                             mensagem.value = it.message.toString()
