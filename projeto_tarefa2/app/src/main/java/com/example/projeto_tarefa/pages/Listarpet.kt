@@ -26,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 
 @Composable
-fun Listarpet(db:FirebaseFirestore, lembretes: List<DocumentSnapshot>, navController: NavHostController, innerPadding: PaddingValues){
+fun Listarpet(db:FirebaseFirestore, cadastros: List<DocumentSnapshot>, navController: NavHostController, innerPadding: PaddingValues){
 
     Column(
         modifier = Modifier.padding(innerPadding)
