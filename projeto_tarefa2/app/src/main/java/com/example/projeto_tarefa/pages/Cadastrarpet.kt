@@ -26,9 +26,9 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
 @Composable
-fun CadastrarLembrete(db: FirebaseFirestore, navController: NavHostController, innerPadding: PaddingValues){
-    var titulo = remember { mutableStateOf("") }
-    var descricao = remember { mutableStateOf("") }
+fun Cadastrarpet(db: FirebaseFirestore, navController: NavHostController, innerPadding: PaddingValues){
+    var nomedopet = remember { mutableStateOf("") }
+    var servico = remember { mutableStateOf("") }
     var data = remember { mutableStateOf("") }
 
     var message = remember { mutableStateOf("") }
@@ -38,11 +38,11 @@ fun CadastrarLembrete(db: FirebaseFirestore, navController: NavHostController, i
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Cadastro de lembrete", fontSize = 25.sp)
+        Text("Cadastro de pet", fontSize = 25.sp)
         Spacer(modifier = Modifier.size(20.dp))
         Column {
-            Field("Título: ", titulo)
-            Field("Descricao: ", descricao)
+            Field("Nome do pet: ", nomedopet)
+            Field("Serviço: ", servico)
             Field("Data: ", data)
         }
 
@@ -54,13 +54,13 @@ fun CadastrarLembrete(db: FirebaseFirestore, navController: NavHostController, i
         ) {
             Button(onClick = {
                 var data = hashMapOf(
-                    "titulo" to titulo.value,
-                    "descricao" to descricao.value,
+                    "nomedopet" to nomedopet.value,
+                    "servico" to servico.value,
                     "data" to data.value,
                     "userId" to Firebase.auth.currentUser?.uid.orEmpty()
                 )
-                db.collection("lembrete").add(data).addOnSuccessListener {
-                    navController.navigate("/ListarLembrete")
+                db.collection("cadastropet").add(data).addOnSuccessListener {
+                    navController.navigate("/Listarpet")
                 }.addOnFailureListener {
                     message.value = it.message.toString()
                 }
